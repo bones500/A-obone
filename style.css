@@ -1,53 +1,88 @@
-
 body {
-  font-family: sans-serif;
-  background: #f4f4f4;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #000;
 }
+
 .container {
-  max-width: 600px;
-  margin: 0 auto;
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
+
 h1 {
-  text-align: center;
-  color: #222;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+  color: #fff;
 }
-img.destaque {
+
+.destaque {
   width: 100%;
-  border-radius: 10px;
-  margin: 20px 0;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
-.botao, .botao-secundario {
-  display: block;
-  text-align: center;
-  background: #4CAF50;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.botao {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
   text-decoration: none;
-}
-.botao-secundario {
-  background: #555;
-}
-.regras {
-  background: #eee;
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 15px;
-}
-ul#numeros {
-  list-style: none;
-  padding-left: 0;
-}
-ul#numeros li {
-  background: #ddd;
-  padding: 5px 10px;
-  margin: 4px 0;
+  font-size: 1em;
   border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.botao:hover {
+  background-color: #0056b3;
+}
+
+.botao-secundario {
+  background-color: #ccc;
+  color: #000;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.regras {
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Fundo com imagem */
+body::before {
+  content: "";
+  background-image: url('moto.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.container, h1, p, .botao, .botao-secundario, .regras {
+  position: relative;
+  z-index: 2;
 }

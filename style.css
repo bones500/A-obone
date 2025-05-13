@@ -1,0 +1,53 @@
+
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1 {
+  text-align: center;
+  color: #222;
+}
+img.destaque {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.botao, .botao-secundario {
+  display: block;
+  text-align: center;
+  background: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.botao-secundario {
+  background: #555;
+}
+.regras {
+  background: #eee;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+ul#numeros {
+  list-style: none;
+  padding-left: 0;
+}
+ul#numeros li {
+  background: #ddd;
+  padding: 5px 10px;
+  margin: 4px 0;
+  border-radius: 5px;
+}

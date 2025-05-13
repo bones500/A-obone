@@ -1,11 +1,10 @@
-   
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ação Limitada Flattrack</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boné Edição Flattrack</title>
   <style>
     body {
       margin: 0;
@@ -13,131 +12,103 @@
       background: url('moto.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
-    }
-
-    .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      max-width: 800px;
-      margin: auto;
-      margin-top: 40px;
-      border-radius: 15px;
       text-align: center;
     }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 40px 20px;
     }
-
-    .botao {
-      display: block;
-      margin: 20px auto;
-      padding: 15px 25px;
-      background-color: #d10f3f;
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    .botao, .botao-secundario {
+      background-color: #28a745;
       color: white;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 10px;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1em;
+      margin: 10px;
+      border-radius: 6px;
       cursor: pointer;
     }
-
-    .botao:hover {
-      background-color: #a30c30;
+    .pix-info {
+      margin: 20px 0;
     }
-
-    .pix-box {
-      margin-top: 20px;
-    }
-
-    .regras {
-      text-align: left;
-      margin-top: 30px;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 10px;
-      display: none;
-    }
-
-    .numeros {
-      margin-top: 20px;
+    #numeros {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 5px;
+      margin-top: 20px;
     }
-
     .numero {
-      width: 50px;
-      height: 40px;
-      background-color: green;
+      background-color: #28a745;
       color: white;
-      border-radius: 5px;
-      line-height: 40px;
+      padding: 10px 16px;
+      margin: 5px;
+      border-radius: 6px;
+      font-weight: bold;
+      width: 60px;
     }
-
-    .ocupado {
-      background-color: red;
-    }
-
-    .pix-copiar {
-      margin-top: 10px;
-      font-size: 16px;
-      cursor: pointer;
+    #regras {
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      display: none;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Ação Limitada Flattrack</h1>
-    <p>Compre um boné por R$120 via Pix e ganhe um número da sorte para concorrer a uma moto!</p>
+  <div class="overlay">
+    <h1>Boné Edição Flattrack</h1>
+    <p>Ao comprar seu boné por R$120 via Pix, você ganha um número da sorte!</p>
 
-    <a class="botao" href="https://nubank.com.br/pagar/1yq6s2/7Hb3wOmpGr" target="_blank">Pagar via Pix (QR Code)</a>
-
-    <div class="pix-box">
-      <span class="pix-copiar" onclick="copiarPix()">Copiar chave Pix: cleiton.tr@hotmail.com</span>
+    <div class="pix-info">
+      <button class="botao" onclick="copiarPix()">Copiar chave Pix</button>
+      <p>Chave Pix: <strong id="chavePix">cleiton.tr@hotmail.com</strong></p>
     </div>
 
-    <a class="botao" onclick="mostrarRegras()">Ver Regras do Sorteio</a>
+    <button class="botao-secundario" onclick="document.getElementById('regras').style.display='block'">Ver Regras</button>
 
-    <div class="regras" id="regras">
+    <div id="regras">
       <h2>Regras do Sorteio</h2>
       <p>
         Na aquisição do Boné Edição Flattrack você ganhará o direito a um número que será o usado para o sorteio do item apresentado.<br>
         Para participar você deverá escolher dentre os números disponíveis entre 000 a 999.<br>
-        O sorteio ocorrerá após a venda de 50% das cotas (500 unidades), pela Loteria Federal de sábado.<br>
-        O número ganhador será a centena do 1º prêmio (últimos 3 algarismos). Ex: 123456 → 456.<br>
-        Se o número sorteado não tiver dono, será remarcado em até 30 dias.<br>
-        O ganhador será contatado por telefone e anunciado nas redes sociais.<br>
-        Retirada do prêmio será em Cambé-PR, com custos por conta do ganhador.<br>
-        O prêmio estará disponível por até 90 dias após aviso de liberação.<br>
-        A entrega é garantida conforme anunciado, sem dívidas, e sem garantias após retirada.<br>
-        Ao participar, você confirma que leu e aceitou estas regras.
+        O sorteio ocorrerá em data a ser divulgada após a venda inicial de 50% dos bonés disponíveis, ou seja, 500 unidades.<br>
+        O sorteio ocorrerá pela Loteria Federal de sábado, sendo confirmado e divulgado horário e número da extração.<br>
+        O número considerado ganhador será a centena do primeiro prêmio (os 3 últimos algarismos). Ex: Se o 1º prêmio for 123456, o número sorteado será 456.<br>
+        Caso o número sorteado não tenha ganhador, o sorteio será adiado em até 30 dias.<br>
+        O ganhador será comunicado por telefone informado no cadastro e divulgado nas redes sociais.<br>
+        O prêmio deve ser retirado em Cambé/PR. Custos de transporte são por conta do ganhador.<br>
+        O prêmio estará disponível por até 90 dias. Após esse prazo, perde-se o direito ao prêmio.<br>
+        Ao receber o número da sorte, o participante afirma ter lido e aceitado todas as regras.
       </p>
     </div>
 
     <h2>Números já comprados</h2>
-    <div class="numeros">
-      <div class="numero ocupado">001</div>
-      <div class="numero ocupado">027</div>
-      <div class="numero">034</div>
-      <div class="numero">058</div>
-      <div class="numero ocupado">099</div>
-      <div class="numero">120</div>
-      <div class="numero">222</div>
-      <div class="numero ocupado">321</div>
-      <!-- Adicione mais aqui -->
+    <div id="numeros">
+      <div class="numero">001</div>
+      <div class="numero">020</div>
+      <div class="numero">103</div>
+      <!-- Você pode atualizar os números dinamicamente aqui -->
     </div>
   </div>
 
   <script>
-    function mostrarRegras() {
-      const regras = document.getElementById('regras');
-      regras.style.display = regras.style.display === 'block' ? 'none' : 'block';
-    }
-
     function copiarPix() {
-      navigator.clipboard.writeText("cleiton.tr@hotmail.com").then(() => {
+      const chave = document.getElementById("chavePix").innerText;
+      navigator.clipboard.writeText(chave).then(() => {
         alert("Chave Pix copiada!");
       });
     }

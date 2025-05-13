@@ -1,88 +1,146 @@
-
- <!DOCTYPE html>
+   
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boné Edição Flattrack</title>
+  <title>Ação Limitada Flattrack</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-image: url('moto.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('moto.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
+
     .container {
-      background-color: rgba(255, 255, 255, 0.95);
-      max-width: 600px;
-      margin: 60px auto;
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 30px;
-      border-radius: 12px;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 40px;
+      border-radius: 15px;
       text-align: center;
     }
+
     h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1em;
+      font-size: 32px;
       margin-bottom: 20px;
     }
-    .botao, .botao-secundario {
-      display: inline-block;
-      padding: 12px 20px;
-      font-size: 16px;
-      margin: 10px 5px;
-      background-color: #007bff;
+
+    .botao {
+      display: block;
+      margin: 20px auto;
+      padding: 15px 25px;
+      background-color: #d10f3f;
       color: white;
-      border: none;
-      border-radius: 6px;
       text-decoration: none;
+      font-size: 18px;
+      border-radius: 10px;
       cursor: pointer;
     }
-    .botao-secundario {
-      background-color: #555;
+
+    .botao:hover {
+      background-color: #a30c30;
     }
+
+    .pix-box {
+      margin-top: 20px;
+    }
+
     .regras {
       text-align: left;
-      margin-top: 20px;
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.1);
       padding: 15px;
-      background-color: #f7f7f7;
-      border-radius: 8px;
+      border-radius: 10px;
       display: none;
+    }
+
+    .numeros {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .numero {
+      width: 50px;
+      height: 40px;
+      background-color: green;
+      color: white;
+      border-radius: 5px;
+      line-height: 40px;
+    }
+
+    .ocupado {
+      background-color: red;
+    }
+
+    .pix-copiar {
+      margin-top: 10px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Boné Edição Flattrack</h1>
-    <p>Ao comprar seu boné por <strong>R$120 via Pix</strong>, você ganha um número da sorte!</p>
+    <h1>Ação Limitada Flattrack</h1>
+    <p>Compre um boné por R$120 via Pix e ganhe um número da sorte para concorrer a uma moto!</p>
 
-    <p><strong>Chave Pix (copia e cola):</strong><br>cleiton.tr@hotmail.com</p>
+    <a class="botao" href="https://nubank.com.br/pagar/1yq6s2/7Hb3wOmpGr" target="_blank">Pagar via Pix (QR Code)</a>
 
-    <a href="https://rifa2rodas.netlify.app/" class="botao" target="_blank">Garanta seu número da sorte</a>
-    <button onclick="document.getElementById('regras').style.display='block'" class="botao-secundario">Ver Regras</button>
+    <div class="pix-box">
+      <span class="pix-copiar" onclick="copiarPix()">Copiar chave Pix: cleiton.tr@hotmail.com</span>
+    </div>
 
-    <div id="regras" class="regras">
+    <a class="botao" onclick="mostrarRegras()">Ver Regras do Sorteio</a>
+
+    <div class="regras" id="regras">
       <h2>Regras do Sorteio</h2>
       <p>
-        Na aquisição do Boné Edição Flattrack você ganhará o direito a um número que será usado para o sorteio do item apresentado.
-        Para participar, você deverá escolher dentre os números disponíveis entre 000 a 999.
-        O sorteio ocorrerá em data a ser divulgada após a venda inicial de 50% dos bonés disponíveis, ou seja, 500 unidades.
-        O sorteio será realizado pela Loteria Federal de sábado, sendo confirmado e divulgado o horário e número da extração.
-        O número considerado ganhador será a centena do primeiro prêmio, ou seja, os 3 últimos dígitos. Exemplo: se o 1º prêmio for 123456, o número sorteado será 456.
-        Caso o número sorteado não tenha ganhador, o sorteio será adiado em até 30 dias, com nova data a ser divulgada.
-        O participante premiado será comunicado pelo telefone informado e divulgado nas redes sociais.
-        A retirada do prêmio será em Cambé/PR, com custos de transporte por conta do ganhador.
-        O prêmio ficará disponível por até 90 dias após o aviso.
-        A entrega é garantida conforme informado e isenta de débitos até a data. Após a entrega, não há garantias adicionais.
-        Ao receber o número da sorte, o participante afirma ter lido e aceito todas as regras.
+        Na aquisição do Boné Edição Flattrack você ganhará o direito a um número que será o usado para o sorteio do item apresentado.<br>
+        Para participar você deverá escolher dentre os números disponíveis entre 000 a 999.<br>
+        O sorteio ocorrerá após a venda de 50% das cotas (500 unidades), pela Loteria Federal de sábado.<br>
+        O número ganhador será a centena do 1º prêmio (últimos 3 algarismos). Ex: 123456 → 456.<br>
+        Se o número sorteado não tiver dono, será remarcado em até 30 dias.<br>
+        O ganhador será contatado por telefone e anunciado nas redes sociais.<br>
+        Retirada do prêmio será em Cambé-PR, com custos por conta do ganhador.<br>
+        O prêmio estará disponível por até 90 dias após aviso de liberação.<br>
+        A entrega é garantida conforme anunciado, sem dívidas, e sem garantias após retirada.<br>
+        Ao participar, você confirma que leu e aceitou estas regras.
       </p>
     </div>
+
+    <h2>Números já comprados</h2>
+    <div class="numeros">
+      <div class="numero ocupado">001</div>
+      <div class="numero ocupado">027</div>
+      <div class="numero">034</div>
+      <div class="numero">058</div>
+      <div class="numero ocupado">099</div>
+      <div class="numero">120</div>
+      <div class="numero">222</div>
+      <div class="numero ocupado">321</div>
+      <!-- Adicione mais aqui -->
+    </div>
   </div>
+
+  <script>
+    function mostrarRegras() {
+      const regras = document.getElementById('regras');
+      regras.style.display = regras.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function copiarPix() {
+      navigator.clipboard.writeText("cleiton.tr@hotmail.com").then(() => {
+        alert("Chave Pix copiada!");
+      });
+    }
+  </script>
 </body>
-</html>   
+</html>
